@@ -9,7 +9,7 @@
         minimum-scale=1.0,
         maximum-scale=1.0,
         user-scalable=no">
-    <title>kabi novel</title>
+    <title>Nano novel</title>
     <!-- inject:css -->
     <!-- endinject -->
     <!-- inject:js -->
@@ -37,19 +37,33 @@
     <div class="page article">
         <div class="content">
             <div class="content-inner"></div>
-        </div>
-        <div class="current-info"></div>
-        <div class="bar"></div>
-        <div class="control" style="display: flex;flex-direction: row;justify-content: space-between;align-items: center;">
-            <div class="left-box">
+            <div class="function-controls">
                 <div class="button" onclick="Router.go('bookshelf')">书架</div>
                 <div class="button" onclick="Router.go('catalogue')">目录</div>
                 <div class="button" onclick="Article.getArticle()">刷新</div>
             </div>
-            <div class="right-box">
+            <div class="vertical-controls">
+                <div class="button prev-page" onclick="Article.pageChange(-1)">&lt;</div>
+                </br></br>
+                <div class="button next-page" onclick="Article.pageChange(1)">&gt;</div>
+            </div>
+        </div>
+
+        <!-- <div class="current-info"></div>
+        <div class="bar"></div> -->
+        <div class="control"
+            style="display: flex;flex-direction: row;justify-content: space-between;align-items: center;">
+            <!-- <div class="left-box">
+                <div class="button" onclick="Router.go('bookshelf')">书架</div>
+                <div class="button" onclick="Router.go('catalogue')">目录</div>
+                <div class="button" onclick="Article.getArticle()">刷新</div>
+            </div> -->
+            <div class="current-info"></div>
+            <div class="bar"></div>
+            <!-- <div class="right-box">
                 <div class="button" onclick="Article.pageChange(-1)">&lt;</div>
                 <div class="button" onclick="Article.pageChange(1)">&gt;</div>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="page catalogue">
@@ -76,7 +90,7 @@
             <div class="form-item url">
                 <div class="label">服务器地址</div>
                 <div class="text">
-                    <input type="text" placeholder="请输入阅读服务地址"/>
+                    <input type="text" placeholder="请输入阅读服务地址" />
                     <div class="button right" onclick="Config.checkUrl()">测试</div>
                 </div>
             </div>

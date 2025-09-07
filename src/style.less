@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -89,18 +90,92 @@ html, body {
 
 .article {
     .content {
+        padding: 10px 50px 10px 10px;
+
         .content-inner {
             >p {
+                font-family: "STSong", STsong, serif, "STKai", "STHeiti", "STYuan", sans-serif;
                 margin: 0;
                 text-indent: 2em;
             }
         }
     }
+
+    .control {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-top: 1px solid #ddd;
+
+        .left-box {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            margin: 0 5px;
+            padding: 0 8px;
+            line-height: 30px;
+
+            &:hover {
+                background-color: #e8e8e8;
+            }
+        }
+
+        .current-info {
+            padding: 0px;
+            color: #000;
+            font-size: 14px;
+            bottom: auto;
+            width: auto;
+            position: absolute;
+            /* 防止文字换行 */
+            white-space: nowrap;
+            background-color: #fff;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+
+        .bar {
+            width: 50px;
+            height: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            position: absolute;
+            right: 10px;
+            overflow: hidden;
+            bottom: auto;
+        }
+
+        .bar-progress {
+            display: none;
+            height: 100%;
+            // background-color: #000;
+            float: left;
+        }
+
+        .bar-text {
+            color: black;
+            position: absolute;
+            line-height: 20px;
+            font-size: 15px;
+        }
+    }
 }
+
+
 
 .catalogue {
     .article-list {
         font-size: 0;
+
         .article-item {
             display: inline-block;
             width: 50%;
@@ -130,6 +205,7 @@ html, body {
 
     .book-list {
         font-size: 0;
+
         .book-item {
             display: inline-block;
             width: 50%;
@@ -190,6 +266,7 @@ html, body {
             float: right;
         }
     }
+
     .form-item {
         padding: 10px 0;
 
@@ -205,8 +282,8 @@ html, body {
             line-height: 60px;
 
             input {
-                font-size: 50px;
-                line-height: 60px;
+                font-size: 30px;
+                line-height: 40px;
 
                 width: 70%;
             }
@@ -241,4 +318,55 @@ html, body {
     left: 0;
     right: 0;
     @import url(common/message/message.less);
+}
+
+.vertical-controls {
+    position: fixed;
+    right: 10px;
+    top: 55%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    z-index: 10;
+    padding-left: 10px;
+
+    .button {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.489);
+        // border: 1px solid #333;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: #333;
+    }
+}
+
+.function-controls {
+    position: fixed;
+    right: 10px;
+    top: 25%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 10;
+    padding-left: 10px;
+
+    .button {
+        padding: 5px 5px;
+        background: rgba(255, 255, 255, 0.489);
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        width: 45px;
+
+        &:hover {
+            background-color: #e8e8e8;
+        }
+    }
 }
